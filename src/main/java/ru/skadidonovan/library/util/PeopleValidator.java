@@ -4,16 +4,16 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 import ru.skadidonovan.library.models.Person;
-import ru.skadidonovan.library.service.PersonService;
+import ru.skadidonovan.library.service.PeopleService;
 
 
 @Component
-public class PersonValidator implements Validator {
+public class PeopleValidator implements Validator {
 
-    private final PersonService personService;
+    private final PeopleService peopleService;
 
-    public PersonValidator(PersonService personService) {
-        this.personService = personService;
+    public PeopleValidator(PeopleService peopleService) {
+        this.peopleService = peopleService;
     }
 
     @Override
@@ -25,7 +25,7 @@ public class PersonValidator implements Validator {
     public void validate(Object target, Errors errors) {
         Person person = (Person) target;
 
-        if (personService.findOneByName(person.getName(), person.getId()).isPresent()){
+        if (peopleService.getPersonByName(person.getName(), person.getId()).isPresent()){
             errors.rejectValue("name", "", "Читатель с таким ФИО уже существует");
         }
     }

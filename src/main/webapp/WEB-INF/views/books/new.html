@@ -17,7 +17,6 @@
     <br/>
     <label for="year">Введите год публикации: </label>
     <input type="text" th:field="*{year}" id="year"/>
-    <div style="color:red" th:if="${#fields.hasErrors('author')}" th:errors="*{author}">author Error</div>
     <br/>
     <input type="submit" value="Добавить!"/>
 </form>
