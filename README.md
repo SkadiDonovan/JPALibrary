@@ -4,6 +4,7 @@ Spring MVC.
 Этот проект сделан на основе проекта JDBCLibrary. Ознакомиться с ним вы можете по этой ссылке
 https://github.com/SkadiDonovan/JdbcLibrary.git
 SQL код для создания таблиц находится в файле sql/library_db.sql.
+
 ---
 ## О проекте
 В этом проекте, помимо замены JDBC на Spring JPA, добавлены следующие 
